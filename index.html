@@ -407,57 +407,38 @@ section { position: relative; z-index: 1; padding: 100px 5vw; }
 #projects { background: var(--bg-surface); }
 
 .proj-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 28px; align-items: stretch;
 }
 
 .pc {
   background: var(--bg-raised); border: 1px solid var(--line);
   border-radius: var(--r-md); overflow: hidden;
   cursor: pointer; transition: all 0.35s var(--ease);
+  display: flex; flex-direction: column;
 }
 .pc:hover { border-color: rgba(192,192,192,0.18); transform: translateY(-6px); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
 
-.pc-thumb {
-  width: 100%; height: 198px;
-  background: var(--bg-deep);
-  position: relative; overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-}
-.pc-thumb img {
-  width: 100%; height: 100%; object-fit: cover;
-  filter: grayscale(20%); transition: transform 0.6s var(--ease), filter 0.6s var(--ease);
-}
-.pc:hover .pc-thumb img { transform: scale(1.06); filter: grayscale(0%); }
 
-.pc-thumb-ph {
-  display: flex; flex-direction: column; align-items: center; gap: 10px; color: var(--text-faint);
-}
-.pc-thumb-ph svg { width: 30px; height: 30px; stroke: var(--text-faint); fill: none; stroke-width: 1; }
-.pc-thumb-ph span { font-family: var(--f-mono); font-size: 10px; }
 
-.pc-ov {
-  position: absolute; inset: 0;
-  background: rgba(8,14,14,0.72);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity 0.3s;
-  backdrop-filter: blur(4px);
-}
-.pc:hover .pc-ov { opacity: 1; }
-.pc-ov-lbl {
-  font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--silver-1);
-  border: 1px solid rgba(192,192,192,0.38); padding: 10px 26px; border-radius: 3px;
-}
+.pc:hover 
 
-.pc-body { padding: 22px 24px 18px; }
-.pc-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 9px; }
+
+
+
+
+
+.pc:hover 
+
+
+.pc-body { padding: 36px 36px 28px; flex: 1; }
+.pc-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
 .pc-year { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.12em; color: var(--silver-2); text-transform: uppercase; }
 .pc-award { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.04em; color: #d4b870; background: rgba(212,184,112,0.1); border: 1px solid rgba(212,184,112,0.3); padding: 3px 10px; border-radius: 3px; }
-.pc-name { font-family: var(--f-display); font-size: 22px; font-weight: 500; letter-spacing: -0.3px; color: var(--text-bright); line-height: 1.15; margin-bottom: 5px; }
-.pc-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 12px; }
+.pc-name { font-family: var(--f-display); font-size: 22px; font-weight: 500; letter-spacing: -0.3px; color: var(--text-bright); line-height: 1.2; margin-bottom: 8px; }
+.pc-role { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 18px; }
 .pc-desc { font-size: 14px; color: var(--text-body); line-height: 1.75; font-weight: 300; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 
-.pc-foot { padding: 13px 24px; border-top: 1px solid var(--line); display: flex; gap: 7px; flex-wrap: wrap; }
+.pc-foot { padding: 20px 36px; border-top: 1px solid var(--line); display: flex; gap: 7px; flex-wrap: wrap; }
 .pc-tag { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.06em; color: var(--silver-1); border: 1px solid rgba(192,192,192,0.25); background: rgba(192,192,192,0.06); padding: 4px 11px; border-radius: 4px; }
 
 /* ── TIMELINE / EXP ── */
@@ -1032,47 +1013,47 @@ footer {
     <p class="s-sub">Klik kartu untuk melihat detail, preview gambar, serta akses ke GitHub dan unduhan ZIP.</p>
     <div class="proj-grid">
       <div class="pc rv" onclick="openModal('ai-things')">
-        <div class="pc-thumb"><img src="project-images/ai-things.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>ai-things.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2026</span><span class="pc-award">🏆 Top 8 Harvard HSIL</span></div><div class="pc-name">AI-of-Things for Special Needs</div><div class="pc-role">Peserta HSIL Hackathon (Harvard)</div><div class="pc-desc">Sistem AI+IoT untuk memprediksi tantrum anak berkebutuhan khusus — wearable monitoring & computer vision real-time.</div></div>
         <div class="pc-foot"><span class="pc-tag">ML</span><span class="pc-tag">IoT</span><span class="pc-tag">Computer Vision</span><span class="pc-tag">Python</span></div>
       </div>
       <div class="pc rv" style="transition-delay:0.05s;" onclick="openModal('eatwell')">
-        <div class="pc-thumb"><img src="project-images/eatwell.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>eatwell.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2025</span></div><div class="pc-name">EatWell: AI-Powered Nutrition Tracker</div><div class="pc-role">Android Developer</div><div class="pc-desc">Aplikasi mobile Android dengan ML untuk mendeteksi kandungan nutrisi makanan secara real-time melalui kamera.</div></div>
         <div class="pc-foot"><span class="pc-tag">Kotlin</span><span class="pc-tag">Android</span><span class="pc-tag">Machine Learning</span><span class="pc-tag">Computer Vision</span></div>
       </div>
       <div class="pc rv" style="transition-delay:0.10s;" onclick="openModal('urban')">
-        <div class="pc-thumb"><img src="project-images/urban.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>urban.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2025</span></div><div class="pc-name">Urban Audio Recognition</div><div class="pc-role">Machine Learning Engineer</div><div class="pc-desc">Model CNN untuk klasifikasi suara urban secara real-time — sistem peringatan dini sirene & klakson untuk individu tunarungu.</div></div>
         <div class="pc-foot"><span class="pc-tag">Python</span><span class="pc-tag">CNN</span><span class="pc-tag">Spectrogram</span><span class="pc-tag">Audio ML</span></div>
       </div>
       <div class="pc rv" style="transition-delay:0.15s;" onclick="openModal('diagonal')">
-        <div class="pc-thumb"><img src="project-images/diagonal.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>diagonal.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2025</span></div><div class="pc-name">Diagonal Game AI Opponent</div><div class="pc-role">UI dan AI Developer</div><div class="pc-desc">AI board game 9x9 dengan Minimax, Alpha-Beta Pruning, Saddle Point, dan fungsi evaluasi heuristik.</div></div>
         <div class="pc-foot"><span class="pc-tag">Python</span><span class="pc-tag">Minimax</span><span class="pc-tag">Alpha-Beta Pruning</span><span class="pc-tag">Game AI</span></div>
       </div>
       <div class="pc rv" style="transition-delay:0.20s;" onclick="openModal('umkm')">
-        <div class="pc-thumb"><img src="project-images/umkm.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>umkm.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2025 – 2026</span></div><div class="pc-name">Digital Catalog UMKM Kelapa Dua</div><div class="pc-role">Bendahara & Sekretaris · PPK Ormawa HMIF</div><div class="pc-desc">Platform web katalog digital umkmkelapadua.com. Penerima dana hibah Kemendikbudristek + 6 sesi pelatihan digital.</div></div>
         <div class="pc-foot"><span class="pc-tag">Web Dev</span><span class="pc-tag">HTML/CSS</span><span class="pc-tag">JavaScript</span><span class="pc-tag">Frontend</span></div>
       </div>
       <div class="pc rv" style="transition-delay:0.25s;" onclick="openModal('whispering')">
-        <div class="pc-thumb"><img src="project-images/whispering.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>whispering.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2026</span></div><div class="pc-name">Whispering Water</div><div class="pc-role">Game Developer · Roblox Studio</div><div class="pc-desc">Game edukasi petualangan berfokus SDG 14: Life Below Water. Dilengkapi riset UX dan evaluasi pre/post-test.</div></div>
         <div class="pc-foot"><span class="pc-tag">Roblox Studio</span><span class="pc-tag">Lua</span><span class="pc-tag">UX Research</span><span class="pc-tag">SDG 14</span></div>
       </div>
       <div class="pc rv" style="transition-delay:0.30s;" onclick="openModal('smart-study')">
-        <div class="pc-thumb"><img src="project-images/smart-study.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>smart-study.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2026</span></div><div class="pc-name">Smart Study Planner</div><div class="pc-role">Android Developer</div><div class="pc-desc">Aplikasi produktivitas berbasis gamifikasi menggunakan Kotlin — menargetkan pelajar Indonesia.</div></div>
         <div class="pc-foot"><span class="pc-tag">Kotlin</span><span class="pc-tag">Android Studio</span><span class="pc-tag">Gamification</span><span class="pc-tag">UI/UX</span></div>
       </div>
       <div class="pc rv" style="transition-delay:0.35s;" onclick="openModal('blockchain')">
-        <div class="pc-thumb"><img src="project-images/blockchain.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>blockchain.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2026</span></div><div class="pc-name">Blockchain Vaccine Data Management</div><div class="pc-role">Blockchain Researcher</div><div class="pc-desc">Arsitektur DApp untuk manajemen distribusi vaksin dengan model P2PKH dan UTXO.</div></div>
         <div class="pc-foot"><span class="pc-tag">Blockchain</span><span class="pc-tag">DApp</span><span class="pc-tag">P2PKH</span><span class="pc-tag">UTXO</span></div>
       </div>
       <div class="pc rv" style="transition-delay:0.40s;" onclick="openModal('kasir')">
-        <div class="pc-thumb"><img src="project-images/kasir.png" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"><div class="pc-thumb-ph" style="display:none;"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/></svg><span>kasir.png</span></div><div class="pc-ov"><div class="pc-ov-lbl">Buka Detail →</div></div></div>
+        
         <div class="pc-body"><div class="pc-meta"><span class="pc-year">2025</span></div><div class="pc-name">Retail Shop Cashier Management</div><div class="pc-role">Fullstack Developer</div><div class="pc-desc">Sistem kasir toko retail berbasis Python untuk manajemen stok dan arus kas.</div></div>
         <div class="pc-foot"><span class="pc-tag">Python</span><span class="pc-tag">SQL</span><span class="pc-tag">Fullstack</span></div>
       </div>
